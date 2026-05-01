@@ -26,13 +26,13 @@ class PacketDecoder:
 
             length = int.from_bytes(self.buffer[:4], 'big')
 
-            if len(self.buffer < 4 + length: 
+            if len(self.buffer) < 4 + length: 
                 break
 
-            payload = self.buffer[4:4+length]
+            payload = self.buffer[4:4 + length]
 
-            self.buffer = self.buffer[4+length:]
+            self.buffer = self.buffer[4 + length:]
 
-            packets.append(json.load(payload.decode()))
+            packets.append(json.loads(payload.decode()))
 
         return packets
